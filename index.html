@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html> 
+	<head>
+		<title>Astro Weight Calculator</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+	</head>
+	
+	<body>
+		<h1>Astro Weight Calculator</h1>
+		<!-- input for user to enter weight -->
+		<div id="weight">
+			<form>
+	 		 	Your Weight <br /> 
+	 		 	<input type="number" name="weight" id="yourWeight">
+			</form>
+		</div>
+
+		<!-- select for user to select a planet with option elements -->
+		<div id="planets">
+			<label>
+				Select a Planet
+			</label>
+			<br />
+			<select id="planetSelection">
+				<option value="27.9">Sun</option>
+				<option value=".377">Mercury</option>
+				<option value=".9032">Venus</option>
+				<option value="1">Earth</option>
+				<option value=".1655">Moon</option>
+				<option value=".3895">Mars</option>
+				<option value="2.640">Jupiter</option>
+				<option value="1.139">Saturn</option>
+				<option value=".917">Uranus</option>
+				<option value="1.148">Neptune</option>
+				<option value=".06">Pluto</option>
+			</select>
+		</div>
+
+		<!-- button for calculate -->
+		<button id="button" onclick="calculate()">Calculate</button>
+
+		<!-- paragraph element for results -->
+		<p id="results"></p>
+
+		<script src="index.js"></script>
+	</body>
+</html>
