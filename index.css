@@ -1,16 +1,6 @@
+.container {
+	margin-top: 2em;
+}
 #results {
-	height: 50px;
-}
-
-#button {
-	background-color: lightblue;
-	color: white;
-	width: 10em;
-	height: 2em;
-	margin: 4.5em 0em;
-}
-
-div {
-	float: left;
-	margin: 3em 2em 0em 0em;
+	margin-top: 2.5em;
 }

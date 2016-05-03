@@ -1,47 +1,56 @@
 <!DOCTYPE html>
-<html> 
+<html ng-app="AstroCalculatorApp"> 
 	<head>
 		<title>Astro Weight Calculator</title>
+		<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
 		<link rel="stylesheet" type="text/css" href="index.css">
 	</head>
 	
-	<body>
-		<h1>Astro Weight Calculator</h1>
-		<!-- input for user to enter weight -->
-		<div id="weight">
-			<form>
-	 		 	Your Weight <br /> 
-	 		 	<input type="number" name="weight" id="yourWeight">
-			</form>
+	<body ng-controller="AstroCalculatorCtrl as vm">
+		<div class="container">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h1>Astro Weight Calculator</h1>
+				</div>
+				<!-- input for user to enter weight -->
+				<div class="panel-body">
+					<div class="row">
+						<div class="col-md-5" >
+							<div id="weight" class="form-group">
+								<form>
+						 		 	<label>Your Weight</label> 
+						 		 	<input class="form-control" type="number" name="weight" id="yourWeight" ng-model="vm.weight">
+								</form>
+							</div>
+
+							<!-- select for user to select a planet with option elements -->
+							<div id="planets" class="form-group">
+								<label>
+									Select a Planet
+								</label>
+								<br />
+								<select class="form-control" id="planetSelection" ng-model="vm.planet" >
+									<option ng-repeat="planet in vm.planets" value={{planet.multiplier}}>{{planet.name}}</option>
+								</select>
+							</div>
+						</div>
+						<div class="col-md-6 col-md-offset-1" id="results">
+							<h3>Your weight on {{vm.planetName}} would be {{vm.newWeight}} lbs.</h3>
+						</div>
+					</div>
+				</div>
+				<!-- button for calculate -->
+				<div class="panel-footer">
+					<button class="btn btn-primary" id="button" ng-click="vm.calculate()">Calculate</button>
+				</div>
+				<!-- paragraph element for results -->			
+			</div>
 		</div>
 
-		<!-- select for user to select a planet with option elements -->
-		<div id="planets">
-			<label>
-				Select a Planet
-			</label>
-			<br />
-			<select id="planetSelection">
-				<option value="27.9">Sun</option>
-				<option value=".377">Mercury</option>
-				<option value=".9032">Venus</option>
-				<option value="1">Earth</option>
-				<option value=".1655">Moon</option>
-				<option value=".3895">Mars</option>
-				<option value="2.640">Jupiter</option>
-				<option value="1.139">Saturn</option>
-				<option value=".917">Uranus</option>
-				<option value="1.148">Neptune</option>
-				<option value=".06">Pluto</option>
-			</select>
-		</div>
-
-		<!-- button for calculate -->
-		<button id="button" onclick="calculate()">Calculate</button>
-
-		<!-- paragraph element for results -->
-		<p id="results"></p>
-
+		
+		<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+		<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 		<script src="index.js"></script>
 	</body>
 </html>

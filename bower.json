@@ -1,0 +1,17 @@
+{
+  "name": "01-AstroWeightCalculator",
+  "main": "index.js",
+  "homepage": "https://github.com/JiMinJun/01-AstroWeightCalculator",
+  "authors": [
+    "Ji Min (Gloria) Jun <jiminisme@gmail.com>"
+  ],
+  "description": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
